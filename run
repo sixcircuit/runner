@@ -31,7 +31,7 @@ def find_run_file(file_path):
         return find_run_file(parent_tree)
 
 
-def use(run_file, usage):
+def use(run_file, run_file_path, usage):
     args = sys.argv[1:]
 
     if len(args) == 0:
@@ -50,11 +50,12 @@ def use(run_file, usage):
 
     if len(args) > 0:
         if args[0] != 'help':
-            print("command: " + args[0] + " was not found.")
+            print("command '" + args[0] + "' was not found in run_file: " + run_file_path)
             exit_code = 1
 
     print(usage)
     print("available commands: ")
+    print('  ' + 'help')
 
     for name, fun in inspect.getmembers(run_file, inspect.isfunction):
         if(fun.__name__[0] != "_" and fun.__name__ != "default"):
@@ -78,7 +79,7 @@ def main():
     
     saved_cwd = os.getcwd()
     os.chdir(run_file_root)
-    exit_code = use(run_file, "usage: <command> [<arg1> <arg2> ...]")
+    exit_code = use(run_file, run_file_path, "usage: <command> [<arg1> <arg2> ...]")
     os.chdir(saved_cwd)
     sys.exit(exit_code)
 
