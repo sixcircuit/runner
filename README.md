@@ -49,11 +49,15 @@ The working directory is changed back to it's original location after the comman
 
 To get the "binary":
 
-``` wget https://raw.github.com/sktaylor/runner/master/run ```
+```
+wget https://raw.github.com/sktaylor/runner/master/run
+```
 
 To get an example `run_file`:
 
-``` wget https://raw.github.com/sktaylor/runner/master/run_file ```
+```
+wget https://raw.github.com/sktaylor/runner/master/run_file
+```
 
 ## Function Names
 
