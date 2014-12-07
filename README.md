@@ -56,6 +56,13 @@ If you had "run" somewhere in your path you could just do:
 hello world. hello world.
 ```
 
+So long as there is a `run_file` available, there is always a function called `help`, that will list the available functions.
+
+```
+# run help 
+... usage and a list of functions available ...
+```
+
 ## Working Directory
 
 The working directory is changed to the location of the `run_file` before commands in it are executed, so that you can use paths relative to it.

@@ -21,7 +21,7 @@ def find_run_file(file_path):
         return(test_path, file_path)
     else:
         if(file_path == "/"):
-            return(None)
+            return(None, None)
 
         (parent_tree, current_dir) = os.path.split(file_path)
 
@@ -69,8 +69,8 @@ def main():
     (run_file_path, run_file_root) = find_run_file(os.getcwd())
 
     if(run_file_path == None):
-        print('"run_file" not found in this directory, or any of the parent directories.')
-        return
+        print('"run_file" not found in this directory, or any of it\'s parent directories.')
+        sys.exit(1)
 
     sys.dont_write_bytecode = True
     run_file = imp.load_source("run_file", run_file_path)
