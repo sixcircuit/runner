@@ -4,9 +4,25 @@
 I dislike complicated command runners. Runner is dirt simple. It's one script, and one file that defines your commands.
 You can include the run script in all your projects, or put it in a global location.
 
+## Installation
+
+To get the "binary":
+
+```
+wget https://raw.github.com/sktaylor/runner/master/run
+```
+
+To get an example `run_file`:
+
+```
+wget https://raw.github.com/sktaylor/runner/master/run_file
+```
+
+I put it in my path, ~/bin specifically (which I added to my path), but as I said, you can just include it in the root of every repository and use `./run <whatever command>` to make it easier for collaborators. You can even do both, I usually do.
+
 ## Usage
 
-You need a file named `run_file` in the current directory, or in a parent directory.
+You need a file named `run_file` in the current directory, or in a parent directory of the current working directory. Runner will search "above" the current working directory and use the closest `run_file` it finds.
 
 ```python
 # run_file
@@ -44,20 +60,6 @@ hello world. hello world.
 
 The working directory is changed to the location of the `run_file` before commands in it are executed, so that you can use paths relative to it.
 The working directory is changed back to it's original location after the commands are run.
-
-## Installation
-
-To get the "binary":
-
-```
-wget https://raw.github.com/sktaylor/runner/master/run
-```
-
-To get an example `run_file`:
-
-```
-wget https://raw.github.com/sktaylor/runner/master/run_file
-```
 
 ## Function Names
 
