@@ -12,13 +12,13 @@ To get the "binary":
 wget https://raw.github.com/sktaylor/runner/master/run
 ```
 
+I put the "binary" in my path, ~/bin specifically (which I added to my path), but as I said, you can just include it in the root of every repository and use `./run <whatever command>` to make it easier for collaborators. You can even do both, I usually do.
+
 To get an example `run_file`:
 
 ```
 wget https://raw.github.com/sktaylor/runner/master/run_file
 ```
-
-I put it in my path, ~/bin specifically (which I added to my path), but as I said, you can just include it in the root of every repository and use `./run <whatever command>` to make it easier for collaborators. You can even do both, I usually do.
 
 ## Usage
 
