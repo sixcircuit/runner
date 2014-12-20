@@ -9,6 +9,7 @@ import inspect
 verbose = False
 # verbose = True
 
+this_root = os.path.dirname(os.path.abspath(__file__))
 
 def find_run_file(file_path):
     global verbose
@@ -21,7 +22,12 @@ def find_run_file(file_path):
         return(test_path, file_path)
     else:
         if(file_path == "/"):
-            return(None, None)
+            test_path = os.path.join(this_root, "run_file")
+            file_path = this_root
+            if(os.path.exists(test_path)):
+                return(test_path, file_path)
+            else:
+                return(None, None)
 
         (parent_tree, current_dir) = os.path.split(file_path)
 

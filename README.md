@@ -23,6 +23,8 @@ wget https://raw.github.com/sktaylor/runner/master/run_file
 ## Usage
 
 You need a file named `run_file` in the current directory, or in a parent directory of the current working directory. Runner will search "above" the current working directory and use the closest `run_file` it finds.
+If it doesn't find a `run_file` in the current directory, or it's parents. It will check for a `run_file` in the directory next to the "binary". So if you include it with your project, next to your `run_file` you can call it from a parent directory, or absolutely.
+`/home/foo_user/run some_command` only works if there is a `run_file` in `/home/foo_user`.
 
 ```python
 # run_file
